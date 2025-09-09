@@ -5,27 +5,115 @@
     </head>
 
     <body>
-        <div>
-            <h1>Chat Room</h1>
+        <form action="https://www.w3schools.com/action_page.php" method="post">
+            <div
+                class="box"
+                style="width: 100px; height: 100px; background-color: red"
+            ></div>
             <div>
-                <span><b>Musa:</b></span>
-                <span>How are you?</span> <br>
-                <span><small>12:00PM</small></span>
+                <label for="first_name">First name</label>
+                <br />
+                <input
+                    name="first_name"
+                    id="first_name"
+                    placeholder="Enter first name"
+                    required
+                />
             </div>
             <div>
-                <span><b>Chinedu:</b> I am good and you?</span> <br>
-                <span><small>12:02PM</small></span>
+                <label for="last_name">Last name</label>
+                <br />
+                <input
+                    name="last_name"
+                    id="last_name"
+                    placeholder="Enter last name"
+                    required
+                />
             </div>
             <div>
-                <span><b>James:</b></span>
-                <span>Musa, how na?</span> <br>
-                <span><small>12:05PM</small></span>
+                <label for="email">Email</label>
+                <br />
+                <input
+                    name="email"
+                    type="email"
+                    id="email"
+                    placeholder="email@email.com"
+                    required
+                />
             </div>
             <div>
-                <span><b>Musa:</b></span>
-                <span>I dey baba!</span> <br>
-                <span><small>12:10PM</small></span>
+                <label for="phone_number">Phone number</label>
+                <br />
+                <input
+                    name="phone_number"
+                    type="tel"
+                    id="phone_number"
+                    placeholder="E.g. 08123456789"
+                />
             </div>
-        </div>
+            <div>
+                <label for="age">Age</label>
+                <br />
+                <input
+                    name="age"
+                    type="number"
+                    id="age"
+                    placeholder="E.g. 18"
+                    required
+                />
+            </div>
+            <div>
+                <label for="gender">Gender</label>
+                <br />
+                <select id="gender" name="gender" required>
+                    <option value="">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div>
+                <label>Hobbies</label>
+                <br />
+                <input
+                    name="hobbies"
+                    type="checkbox"
+                    id="singing"
+                    value="singing"
+                />
+                <label for="singing">Singing</label>
+                <input
+                    name="hobbies"
+                    type="checkbox"
+                    id="playing"
+                    value="playing"
+                />
+                <label for="playing">Playing</label>
+            </div>
+            <div>
+                <label for="bio">Bio</label>
+                <br />
+                <textarea
+                    id="bio"
+                    name="bio"
+                    placeholder="Enter your biography"
+                    required
+                ></textarea>
+            </div>
+            <div>
+                <input
+                    type="checkbox"
+                    id="terms"
+                    name="terms"
+                    value="true"
+                    required
+                />
+
+                <label for="terms" id="accept"
+                    >Please accept our terms and condition</label
+                >
+            </div>
+            <br />
+            <button type="button" id="submit">Submit</button>
+        </form>
     </body>
 </html>
