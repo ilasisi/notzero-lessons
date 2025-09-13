@@ -2,7 +2,7 @@
 //Simulate auto response
 
 const messageInput = document.getElementById("message"); //DOM selection
-const messageContainer = document.querySelector(".message-container"); //DOM selection
+const messageContainer = document.getElementById("message-container"); //DOM selection
 
 const currentTime = new Date().toLocaleTimeString([], {
     hour: "2-digit",
