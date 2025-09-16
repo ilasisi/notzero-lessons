@@ -1,11 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>NotZero</title>
+
+        <style>
+            .red {
+                color: red;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                scroll-behavior: smooth;
+            }
+            .underline {
+                text-decoration: underline;
+            }
+        </style>
     </head>
+
     <body>
-        <script src="./module.js" type="module"></script>
+        <input id="input" placeholder="Enter message ..." />
+        <button id="submit-btn" onclick="sendMessage()">Submit</button>
+        <div id="parent">
+            <p id="elem">Get element by ID</p>
+
+            <img src="../image1.svg" id="image" />
+
+            <div id="byId">Getting element by ID</div>
+            <p class="byClassName">Get elements by class name 1</p>
+            <p class="byClassName">Get elements by class name 2</p>
+            <button style="display: none" id="button">Change Image</button>
+            <button onclick="increaseFont()">Increase font</button>
+        </div>
+        <script>
+            //DOM Selection - Document Object Model
+            //-- getElementById()
+            //-- getElementsByClassName()
+            //-- getElementsTagName()
+            //-- querySelector()
+            //-- querySelectorAll()
+
+            //DOM Manipulation
+
+            const byId = document.getElementById("byId");
+            let fontSize = 1;
+
+            byId.style.fontSize = `${fontSize}rem`;
+
+            function increaseFont() {
+                ++fontSize;
+                byId.style.fontSize = `${fontSize}rem`;
+            }
+
+            byId.innerHTML = `
+                <small>Date: ${new Date().toLocaleDateString()}</small>
+            `;
+
+            const byClassName = document.getElementsByClassName("byClassName");
+
+            const byTag = document.getElementsByTagName("p");
+
+            const queryS = document.querySelector("div #elem");
+
+            const querySA = document.querySelectorAll("div");
+
+            // console.log(byId);
+
+            // console.log(byClassName);
+
+            console.log(byTag);
+
+            console.log(queryS);
+
+            console.log(querySA);
+
+            const elem = document.getElementById("elem");
+
+            elem.innerHTML = "<span>Hello</span>";
+
+            const parent = document.getElementById("parent");
+
+            parent.appendChild(byId);
+
+            // console.log(parent);
+
+            const image = document.getElementById("image");
+
+            function changeImage() {
+                image.src = "../image1.svg";
+                elem.style.color = "red";
+            }
+
+            const button = document.getElementById("button");
+
+            const func = () => (button.onclick = changeImage());
+
+            setTimeout(func, 2000);
+
+            const input = document.getElementById("input");
+            const btn = document.getElementById("submit-btn");
+            const parent2 = document.createElement("div");
+
+            document.body.appendChild(parent2);
+
+            const members = ["John", "Sam", "Doe"];
+
+            const sendMessage = () => {
+                const messageContainer = document.createElement("div");
+
+                messageContainer.style.backgroundColor = "#ddd";
+
+                const user =
+                    members[Math.floor(Math.random() * members.length)];
+
+                const time = new Date().toLocaleTimeString();
+
+                messageContainer.innerHTML = `
+                    <p style="font-weight: 700; color: red">${user}</p>
+                    <p>${input.value}</p>
+                    <small>${time}</small>
+                `;
+
+                input.value = "";
+
+                parent2.appendChild(messageContainer);
+
+                parent2.scrollTop = parent.scrollHeight;
+            };
+        </script>
     </body>
 </html>
